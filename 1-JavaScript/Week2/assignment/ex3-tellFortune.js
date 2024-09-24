@@ -39,12 +39,15 @@ function selectRandomly(arr) {
 }
 
 export function tellFortune(kidsOptions, partnerNamesOptions, locationOptions, jobTitlesOptions) {
-  const predictedNumKids = selectRandomly(kidsOptions); 
-  const kidsText = predictedNumKids === 1 ? `1 kid` 
-                  : predictedNumKids === 0 ? `no kids`
-                  : `${predictedNumKids} kids`; 
-  const prediction = `You will be a ${selectRandomly(jobTitlesOptions)} in ${selectRandomly(locationOptions)}, married to ${selectRandomly(partnerNamesOptions)} with ${kidsText}.`;
+  const prediction = `You will be a ${selectRandomly(jobTitlesOptions)} in ${selectRandomly(locationOptions)}, married to ${selectRandomly(partnerNamesOptions)} with ${selectRandomly(kidsOptions)} kids.`;
   return prediction;
+  // I like this approach more, but it didn't pass automated testing
+  // const predictedNumKids = selectRandomly(kidsOptions); 
+  // const kidsText = predictedNumKids === 1 ? `1 kid` 
+  //                 : predictedNumKids === 0 ? `no kids`
+  //                 : `${predictedNumKids} kids`; 
+  // const prediction = `You will be a ${selectRandomly(jobTitlesOptions)} in ${selectRandomly(locationOptions)}, married to ${selectRandomly(partnerNamesOptions)} with ${kidsText}.`;
+  // return prediction;
 }
 
 function main() {
