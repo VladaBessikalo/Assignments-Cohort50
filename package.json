@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./.dist/test-runner/exercise-runner",
-    "test": "node ./.dist/test-runner/test-cli",
+    "test": "jest",
     "test:runner": "glob -c \"node --test\" \"./.dist/__tests__/**/*.test.js\"",
     "jest:js2": "jest ./.dist/1-JavaScript/Week2",
     "jest:js3": "jest ./1-JavaScript/Week3",
