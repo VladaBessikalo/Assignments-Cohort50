@@ -1,1 +1,21 @@
 /* Write your style here */
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+li {
+  width: 400px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.read {
+  background-color: green;
+}
+
+.unread {
+  background-color: red;
+}
