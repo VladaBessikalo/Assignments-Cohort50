@@ -8,4 +8,26 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 3. Look in the css file!
 ------------------------------------------------------------------------------*/
 
-// TODO add your JavaScript code here.
+function fillInYourInfo(nickname, favFood, hometown) {
+  const spans = document.querySelectorAll('span');
+
+  spans.forEach((span) => {
+    if (span.id === 'nickname') {
+      return span.textContent = nickname;
+    } 
+    if (span.id === 'fav-food') {
+      return span.textContent = favFood;
+    } 
+    if (span.id === 'hometown') {
+      return span.textContent = hometown;
+    } 
+  })
+
+  const listOfLi = document.querySelectorAll('li');
+
+  listOfLi.forEach((li) => {
+    li.classList.add('list-item');
+  }) 
+}
+
+fillInYourInfo('Vlada B', 'Pizza', 'Sevastopol');
