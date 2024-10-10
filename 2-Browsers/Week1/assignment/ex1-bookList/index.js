@@ -27,6 +27,7 @@ function createBookList(books) {
     const bookCover = document.createElement('img');
     const imageName = book.title.toLowerCase().replace(/\s+/g, '_') + '.jpg';
     bookCover.src = `assets/${imageName}`;
+    bookCover.alt = 'book cover';
     book.alreadyRead === true ? bookItem.classList.add('read') : bookItem.classList.add('unread')
     bookItem.appendChild(bookContent);
     bookItem.appendChild(bookCover);
