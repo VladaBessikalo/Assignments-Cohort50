@@ -20,8 +20,51 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+const walkingCatImg = document.querySelector("img");
+const walkingCatSrc = walkingCatImg.src;
+const dancingCatSrc = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif"
+let currentCatPosition = 0;
+const step = 10;
+const walkingCatImgWidth = walkingCatImg.width;
+let hasDance = false;
+let walkingInterval;
+
 function catWalk() {
-  // TODO complete this function
+  const pageWidth = document.documentElement.clientWidth;
+  const middleScreen = pageWidth / 2;
+  const isCatAtMiddleLeft = currentCatPosition >= middleScreen - (walkingCatImgWidth / 2);
+  const isCatAtMiddleRight = currentCatPosition <= middleScreen + (walkingCatImgWidth / 2);
+  
+  walk();
+
+  if (isCatAtMiddleLeft && isCatAtMiddleRight  && !hasDance) {
+    hasDance = true;
+    catDance();
+  }
+
+  if (currentCatPosition >= (pageWidth - walkingCatImgWidth - step)) {
+    currentCatPosition = 0;
+    hasDance = false;
+  }
 }
 
-// TODO execute `catWalk` when the browser has completed loading the page
+function walk() {
+  currentCatPosition += step;
+  walkingCatImg.style.left = `${currentCatPosition}px`;
+}
+
+function catDance() {
+  clearInterval(walkingInterval);
+  walkingCatImg.src = dancingCatSrc;    
+
+  setTimeout(() => {
+    walkingCatImg.src = walkingCatSrc;
+    startWalking();
+  }, 5000);  
+}
+
+function startWalking() {
+  walkingInterval = setInterval(catWalk, 50);
+}
+
+window.addEventListener('DOMContentLoaded', startWalking);
