@@ -24,12 +24,12 @@ exercise file.
 
 // The line below makes the rollDie() function available to this file.
 // Do not change or remove it.
-const rollDie = require('../../helpers/pokerDiceRoller');
+import { rollDie } from '../../helpers/pokerDiceRoller.js';
 
 export function rollDice() {
-  // TODO Refactor this function
   const dice = [1, 2, 3, 4, 5];
-  return rollDie(1);
+  const arrayOfPromises = dice.map((diceIndex) => rollDie(diceIndex)) 
+  return Promise.all(arrayOfPromises);
 }
 
 function main() {
@@ -42,3 +42,6 @@ function main() {
 if (process.env.NODE_ENV !== 'test') {
   main();
 }
+
+
+// Because rejected Promise doesn't block asynchronous code, it just catch rejected block, process it and show the reason why it rejected (if we had written such logic).
