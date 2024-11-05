@@ -4,6 +4,7 @@
 
 ### 3-UsingAPIs - Week1
 
-|  Exercise   | Passed | Failed | ESLint |
-|-------------|--------|--------|--------|
-| ex1-johnWho |   9    |   -    |   ✓    |
+|       Exercise        | Passed | Failed | ESLint |
+|-----------------------|--------|--------|--------|
+| ex1-johnWho           |   9    |   -    |   ✓    |
+| ex2-checkDoubleDigits |   11   |   -    |   ✓    |
