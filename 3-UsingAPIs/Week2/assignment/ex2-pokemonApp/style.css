@@ -1,1 +1,17 @@
 /* add your styling here */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#container > *{
+  margin-bottom: 20px;
+}
