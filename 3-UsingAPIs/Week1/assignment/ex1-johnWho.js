@@ -22,7 +22,9 @@ export const getAnonName = (firstName) => {
 }
 
 function main() {
-  getAnonName('John');
+  getAnonName('John')
+    .then(console.log)
+    .catch(console.error);
 }
 
 // ! Do not change or remove the code below
