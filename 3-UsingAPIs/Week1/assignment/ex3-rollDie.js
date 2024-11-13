@@ -26,13 +26,11 @@ export function rollDie() {
       // Use callback to notify that the die rolled off the table after 6 rolls
       if (roll > 6) {
         reject(new Error('Oops... Die rolled off the table.'));
-        return;
       }
 
       // Use callback to communicate the final die value once finished rolling
       else if (roll === randomRollsToDo) {
         resolve(value);
-        return;
       }
 
       // Schedule the next roll todo until no more rolls to do
@@ -61,3 +59,8 @@ function main() {
 if (process.env.NODE_ENV !== 'test') {
   main();
 }
+
+
+// Problem described in the instruction doesn't occur because I rewrote the code using a Promise.
+// Promise can only be resolved or rejected once, so as soon as one of these actions occurs,
+// no further actions are triggered. 
