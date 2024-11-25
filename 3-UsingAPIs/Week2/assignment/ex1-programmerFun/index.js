@@ -26,8 +26,7 @@ async function requestData(url) {
     throw new Error(`HTTP ${result.status}`);
   }
   
-  const data = await result.json();  
-  return data;
+  return await result.json();  
 }
 
 function renderImage(data) {
